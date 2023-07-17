@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "ec35b920-76fe-4631-ae56-43c988d47a07",
+		"name": "EMail-Scrapper-Plugin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "937633"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", \"Bearer \"+res.access_token); "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "muralivenkatesh94@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://44.204.230.33/mail-distribution/public/api/login",
+					"protocol": "http",
+					"host": [
+						"44",
+						"204",
+						"230",
+						"33"
+					],
+					"path": [
+						"mail-distribution",
+						"public",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Scrapper Data Upload",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 10|Ztorv4OkU26ksB7VepoLBhuzLcnbemNXBsque8G8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"company_information_lists\": [\n    {\n      \"company_name\": \"Oxford Dental\",\n      \"website_url\": \"http://www.oxforddental.com\",\n      \"first_name\": \"Lauren\",\n      \"last_name\": \"Phillips\",\n      \"email_address\": \"lphillips@oxforddental.com\",\n      \"job_title\": \"Dentist\",\n      \"address_line\": \"2155 S Lamar Blvd\",\n      \"city\": \" Oxford\",\n     \"state_or_province\": \" Mississippi\",\n      \"postal_code\": \" 38655-5223\",\n     \"country\": \" United States\",\n      \"phone\": \"'+1-662-6380051\",\n      \"total_employees\": \" 5 - 10\",\n      \"revenue\": \"$500,000 - $1 mil.\",\n     \"industry_type\": \"Healthcare\",\n      \"linkedin_profile_link\": \"http://www.linkedin.com/in/lauren-phillips-58b458a3\"\n    },\n    {\n      \"company_name\": \"San Diego Periodontics\",\n      \"website_url\": \"http://www.sdperio.com\",\n      \"first_name\": \"David\",\n      \"last_name\": \"Richards\",\n      \"email_address\": \"drichards@maytag.com\",\n      \"job_title\": \"Dentist\",\n      \"address_line\": \"4060 4th Ave\",\n      \"city\": \" San Diego\",\n     \"state_or_province\": \" California\",\n      \"postal_code\": 92103,\n     \"country\": \" United States\",\n      \"phone\": \"'+16195430905\",\n      \"total_employees\": \" 1 - 5\",\n      \"revenue\": \"Under $500,000\",\n     \"industry_type\": \"Healthcare\",\n      \"linkedin_profile_link\": \"http://www.linkedin.com/in/david-richards-63b2379\"\n    },\n    {\n      \"company_name\": \"Spring Dental\",\n      \"website_url\": \"http://www.springdental.nl\",\n      \"first_name\": \"Creed\",\n      \"last_name\": \"Cardon\",\n      \"email_address\": \"ccardon@thespringdental.com\",\n      \"job_title\": \"Dentist\",\n      \"address_line\": \"  6634 S Memorial Dr, \",\n      \"city\": \" Tulsa\",\n     \"state_or_province\": \"Oklahoma\",\n      \"postal_code\": 74133,\n     \"country\": \"United States\",\n      \"phone\": \" +1 918-872-7140\",\n      \"total_employees\": \"  10 - 20\",\n      \"revenue\": \"$1 mil. - $5 mil.\",\n     \"industry_type\": \"Healthcare\",\n      \"linkedin_profile_link\": \"http://www.linkedin.com/in/creed-cardon-42218513\"\n    },\n    {\n      \"company_name\": \"Linden Hills Dentistry\",\n      \"website_url\": \"http://www.lindenhillsdentistry.com\",\n      \"first_name\": \"Matt\",\n      \"last_name\": \"Hawn\",\n      \"email_address\": \"matt@lhdmpls.com\",\n      \"job_title\": \"Dentist\",\n      \"address_line\": \"4289 Sheridan Ave S\",\n      \"city\": \" Minneapolis\",\n     \"state_or_province\": \" Minnesota\",\n      \"postal_code\": 55410,\n     \"country\": \" United States\",\n      \"phone\": \"'+1 (612) 922-6164\",\n      \"total_employees\": \"  10 - 20\",\n      \"revenue\": \"$1 mil. - $5 mil.\",\n     \"industry_type\": \"Healthcare\",\n      \"linkedin_profile_link\": \"http://www.linkedin.com/in/matt-hawn-3066843b\"\n    },\n    {\n      \"company_name\": \"CHAD C. PERRY, DDS, PLLC\",\n      \"website_url\": \"http://www.chadperrydds.com\",\n      \"first_name\": \"Chad\",\n      \"last_name\": \"Perry\",\n      \"email_address\": \"chad@chadperrydds.com\",\n      \"job_title\": \"Dentist\",\n      \"address_line\": \"8408 Davis Blvd\",\n      \"city\": \" North Richland Hills\",\n     \"state_or_province\": \" Texas\",\n      \"postal_code\": \" 76182-8603\",\n     \"country\": \" United States\",\n      \"phone\": \"'+1(817) 812-2082\",\n      \"total_employees\": \" 1 - 5\",\n      \"revenue\": \"Under $500,000\",\n     \"industry_type\": \"Healthcare\",\n      \"linkedin_profile_link\": \"http://www.linkedin.com/in/chad-perry-a4a587b\"\n    },\n    {\n      \"company_name\": \"Pacific Dental Services\",\n      \"website_url\": \"http://www.pacificdentalservices.com\",\n      \"first_name\": \"Arman\",\n      \"last_name\": \"Mirai\",\n      \"email_address\": \"amirai@pacificdentalservices.com\",\n      \"job_title\": \"Dentist\",\n      \"address_line\": \"17000 Red Hill Avenue\",\n      \"city\": \" Irvine\",\n     \"state_or_province\": \" California\",\n      \"postal_code\": 92614,\n     \"country\": \" United States\",\n      \"phone\": \"'+1714-845-8500\",\n      \"total_employees\": \"5,000 - 10,000\",\n      \"revenue\": \"$1 bil. - $5 bil.\",\n     \"industry_type\": \"Healthcare\",\n      \"linkedin_profile_link\": \"http://www.linkedin.com/in/armanmiraidds\"\n    },\n    {\n      \"company_name\": \"Pacific Dental Services\",\n      \"website_url\": \"http://www.pacificdentalservices.com\",\n      \"first_name\": \"Shaharyar\",\n      \"last_name\": \"Ashraf\",\n      \"email_address\": \"shaharyar.ashraf@pacificdentalservices.com\",\n      \"job_title\": \"Dentist\",\n      \"address_line\": \"17000 Red Hill Avenue\",\n      \"city\": \" Irvine\",\n     \"state_or_province\": \" California\",\n      \"postal_code\": 92614,\n     \"country\": \" United States\",\n      \"phone\": \"'+1714-845-8500\",\n      \"total_employees\": \"5,000 - 10,000\",\n      \"revenue\": \"$1 bil. - $5 bil.\",\n     \"industry_type\": \"Healthcare\",\n      \"linkedin_profile_link\": \"http://www.linkedin.com/in/shaharyar-ashraf-dds-69615683\"\n    },\n    {\n      \"company_name\": \"Parkside Dental\",\n      \"website_url\": \"http://www.smiledesplaines.com\",\n      \"first_name\": \"Gerald\",\n      \"last_name\": \"Middleton\",\n      \"email_address\": \"drmiddleton@gmdental.com\",\n      \"job_title\": \"Dentist\",\n      \"address_line\": \"1645 S River Rd\",\n      \"city\": \" Des Plaines\",\n     \"state_or_province\": \" Illinois\",\n      \"postal_code\": 60018,\n     \"country\": \" United States\",\n      \"phone\": \"'+1847-299-4811\",\n      \"total_employees\": \"  10 - 20\",\n      \"revenue\": \"$1 mil. - $5 mil.\",\n     \"industry_type\": \"Healthcare\",\n      \"linkedin_profile_link\": \"http://www.linkedin.com/in/dr-gerald-middleton-19585426\"\n    },\n    {\n      \"company_name\": \"San Ysidro Health\",\n      \"website_url\": \"http://www.syhealth.org\",\n      \"first_name\": \"Saif\",\n      \"last_name\": \"Issac\",\n      \"email_address\": \"saif.issac@syhc.org\",\n      \"job_title\": \"Dentist\",\n      \"address_line\": \"1275 30th Street\",\n      \"city\": \" San Diego\",\n     \"state_or_province\": \" California\",\n      \"postal_code\": 92102,\n     \"country\": \" United States\",\n      \"phone\": \"'+1-619-662-4161\",\n      \"total_employees\": \"500 - 1,000\",\n      \"revenue\": \"$250 mil. - $500 mil.\",\n     \"industry_type\": \"Healthcare\",\n      \"linkedin_profile_link\": \"http://www.linkedin.com/in/saif-issac-3460b6126\"\n    }\n  ] \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://44.204.230.33/mail-distribution/public/api/companies-informations-feeding",
+					"protocol": "http",
+					"host": [
+						"44",
+						"204",
+						"230",
+						"33"
+					],
+					"path": [
+						"mail-distribution",
+						"public",
+						"api",
+						"companies-informations-feeding"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

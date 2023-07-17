@@ -1,0 +1,30 @@
+{
+    "manifest_version":3,
+    "name":"My Extension",
+
+    "version":"0.0.1",
+    "description":"HJKHKJ",
+    "author":"Gaurav",
+    "action":{
+        "default_popup":"popup.html",
+        "default_title":"Amazing chrome extension"
+    }
+    ,
+    "options_page":"options.html",
+    "background":{
+        "service_worker":"background.js"
+    },
+    "permissions":[
+       "activeTab",
+       "tabs",
+       "scripting"
+    
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+
+          "js": ["contentScript.js","jquery.js"]
+        }
+      ]
+}

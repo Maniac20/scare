@@ -35,6 +35,7 @@ $(document).ready(function () {
           $('#loginForm').css({'display':'none'})
 
           $('.utility').css({'display':'block'});
+          console.log("fgfdg");
 
           
         }

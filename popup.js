@@ -1,34 +1,71 @@
 $(document).ready(function () {
-  $("#submit").on("click", function () {
-    var user = $("#username").val();
-    var pass = $("#password").val();
+  $("#loginForm").submit(async function (event) {
+    event.preventDefault();
+    const logindata = {
+      email: $("#email").val(),
+      password: $("#password").val(),
+    };
 
-    if (user == "" || pass == "") {
-      confirm("Incorrect username/password") == true;
-      $("#username").val("");
-      $("#password").val("");
-    } else {
-      if (user == "Gaurav" && pass == "123") {
-        var message = {
-          action: "SCRPAING STARTED",
-          data: {
-            user: "Gaurav",
-            pass: "123",
-          },
-        };
-        chrome.tabs.query(
-          { active: true, currentWindow: true },
-          function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, message);
-          }
-        );
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      body: JSON.stringify(logindata),
+    };
+
+    try {
+      const response = await fetch('http://44.201.145.32/api/login', requestOptions);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const responseData = await response.json();
+      console.log(responseData);
+      console.log(responseData.status);
+
+      if (responseData.status) {
+        //login successfull
+        if (confirm("LOGIN SUCCESSFULL....CLICK OKAY FOR FURTHER ACTION")) {
+         
+          $('#loginForm').trigger('reset')
+
+          //push two buttons in the html
+
+          $('#loginForm').css({'display':'none'})
+
+          $('.utility').css({'display':'block'});
+
+          
+        }
+        else {
+          alert("CANCEL BUTTON SELECTED ")
+          $('#loginForm').trigger('reset')
+        }
+
+
+      }
+      else {
+        alert("INVALID CREDETAILS ..PLEASE TRY AGAIN....")
+        $('#loginForm').trigger('reset')
+
+        
+      }
 
       
-      } else {
-        confirm("Incorrect username/password");
-        $("#username").val("");
-        $("#password").val("");
+    }
+
+    catch (error) {
+      if (confirm("LOGIN FAILED: " + error.message) == true) {
+        if (confirm("Please Try Again") == true) {
+          $('#loginForm').trigger('reset')
+
+        }
       }
+
+      
+
+
     }
   });
 });

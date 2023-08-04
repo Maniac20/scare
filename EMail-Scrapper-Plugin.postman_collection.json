@@ -45,17 +45,15 @@
 					]
 				},
 				"url": {
-					"raw": "http://44.204.230.33/mail-distribution/public/api/login",
+					"raw": "http://44.201.145.32/api/login",
 					"protocol": "http",
 					"host": [
 						"44",
-						"204",
-						"230",
-						"33"
+						"201",
+						"145",
+						"32"
 					],
 					"path": [
-						"mail-distribution",
-						"public",
 						"api",
 						"login"
 					]
@@ -86,7 +84,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 10|Ztorv4OkU26ksB7VepoLBhuzLcnbemNXBsque8G8",
+						"value": "Bearer 11|tP80tpycm6UQiPVbEx2Mxx2SgYgVkp8Et7lbPPCb",
 						"type": "text"
 					}
 				],
@@ -100,17 +98,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://44.204.230.33/mail-distribution/public/api/companies-informations-feeding",
+					"raw": "http://44.201.145.32/api/companies-informations-feeding",
 					"protocol": "http",
 					"host": [
 						"44",
-						"204",
-						"230",
-						"33"
+						"201",
+						"145",
+						"32"
 					],
 					"path": [
-						"mail-distribution",
-						"public",
 						"api",
 						"companies-informations-feeding"
 					]

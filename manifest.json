@@ -10,7 +10,7 @@
         "default_title":"Amazing chrome extension"
     }
     ,
-    "options_page":"options.html",
+    
     "background":{
         "service_worker":"background.js"
     },

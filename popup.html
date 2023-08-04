@@ -13,23 +13,53 @@
 
 <body>
   <div class="container">
-    <h2>Login</h2>
+
+    <form id="loginForm">
+      <h2>Login</h2>
 
       <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <label for="email">Username</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Enter your password" required>
       </div>
       <div class="form-group">
-        <button type="button" id="submit">Login</button>
+        <input type="submit" value="Login">
       </div>
+    </form>
+
+    <div class="row utility">
+
+      <h2>Please choose the appropriate option for extracting data from LinkedIn.</h2>
+      <div class="col-6">
+
+
+        <button class="people">People</button>
+      </div>
+
+
+
+
+      <div class="col-6">
+
+
+        <button class="profile">Profile</button>
+      </div>
+
+      <div class="box wait_icon">
+        <img src="https://i.stack.imgur.com/suvmP.png?s=256">
+        <img src="https://i.stack.imgur.com/hMTmj.png?s=256">
+      </div>
+
+
+
+    </div>
 
   </div>
 
-  >
+
 </body>
 
 </html>

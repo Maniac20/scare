@@ -1,9 +1,10 @@
 body {
   background-color: #f1f1f1;
-  background-image: url('texture.jpg');
+  /* background-image: url('texture.jpg'); */
   background-size: cover;
   font-family: Arial, sans-serif;
   width: 400px;
+  height: 100%;
 }
 
 .container {
@@ -46,4 +47,114 @@ h2 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* Additional CSS */
+.people,
+.profile {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.people:after,
+.profile:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.people:main,
+.profile:main,
+.people:focus,
+.profile:focus {
+  user-select: auto;
+}
+
+.people:hover:not(:disabled),
+.profile:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.people:disabled,
+.profile:disabled {
+  cursor: auto;
+}
+.col-6 {
+  width: 50%;
+  float: left;
+}
+
+.box {
+  width: 120px; /* control the size */
+  display: inline-grid;
+  border: none;
+  
+ 
+}
+
+.box img {
+  grid-area: 1/1; /* images above each other */
+  mix-blend-mode: darken; /* needed to remove the white background */
+  margin-left: 60px;
+  height: 200px;
+  
+ 
+}
+.wait_icon{
+  display: none;
+}
+
+.box img:last-child {
+  animation: r 1s linear infinite;
+  transform-origin: 48% 47%;
+}
+
+@keyframes r {
+  to {
+    transform: rotate(-360deg)
+  }
+}
+.utility{
+  display: none;
+}
+.row {
+  display: flex; /* Use flexbox for the row layout */
+  flex-wrap: wrap; /* Allow elements to wrap to the next line if needed */
+  margin: -10px; /* Negative margin to counteract padding on child elements */
 }

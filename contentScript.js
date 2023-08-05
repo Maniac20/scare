@@ -4,11 +4,17 @@ function getCurrentUrl() {
 }
 window.onload = function () {
 
+  console.log('heygfdgdfgdf')
+  
+
+  
+//  console
+  
 
   //here we will check if the their is login error then i should reset the form and give a chance to refill
 
   // chrome.runtime.onMessage.addListener(function (request,sender,sendResponse) {
-  //   console.log("",request.action);
+  //   console.log("",requ  est.action);
   // })
 
   var currenWindow = getCurrentUrl();

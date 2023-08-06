@@ -158,3 +158,28 @@ h2 {
   flex-wrap: wrap; /* Allow elements to wrap to the next line if needed */
   margin: -10px; /* Negative margin to counteract padding on child elements */
 }
+
+.utility{
+  display: none;
+}
+
+/* Add the following CSS to your extension's CSS file or inject it directly using content script */
+.not-linkedin-message , .scraping_progress{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #555;
+}
+
+.not-linkedin-message h1 .scraping_progress{
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

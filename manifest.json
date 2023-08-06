@@ -18,7 +18,8 @@
     "permissions":[
        "activeTab",
        "tabs",
-       "scripting"
+       "scripting",
+       "activeTab"
     
     ],
     "content_scripts": [
